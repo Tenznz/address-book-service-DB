@@ -44,3 +44,21 @@ mysql> desc addressbook;
 | email        | varchar(100) | NO   |     | NULL    |       |
 +--------------+--------------+------+-----+---------+-------+
 8 rows in set (0.02 sec)
+
+mysql> insert into addressbook(first_name,last_name,address,city,state,zip,phone_number,email) values
+    -> ('tenzing','dhugkar','india','banglore','karnartaka','1234','7018485591','dhugkar@gmail.com'),
+    -> ('babu','rao','india','banglore','karnartaka','9282','9283838484','baburao@gmail.com');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbook;
++------------+-----------+---------+----------+------------+------+--------------+-------------------+
+| first_name | last_name | address | city     | state      | zip  | phone_number | email             |
++------------+-----------+---------+----------+------------+------+--------------+-------------------+
+| tenzing    | dhugkar   | india   | banglore | karnartaka | 1234 | 7018485591   | dhugkar@gmail.com |
+| babu       | rao       | india   | banglore | karnartaka | 9282 | 9283838484   | baburao@gmail.com |
++------------+-----------+---------+----------+------------+------+--------------+-------------------+
+2 rows in set (0.00 sec)
+
+
+
