@@ -60,5 +60,17 @@ mysql> select * from addressbook;
 +------------+-----------+---------+----------+------------+------+--------------+-------------------+
 2 rows in set (0.00 sec)
 
+mysql> update addressbook set address ='canada' where first_name = 'tenzing';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++------------+-----------+---------+----------+------------+------+--------------+-------------------+
+| first_name | last_name | address | city     | state      | zip  | phone_number | email             |
++------------+-----------+---------+----------+------------+------+--------------+-------------------+
+| tenzing    | dhugkar   | canada  | banglore | karnartaka | 1234 | 7018485591   | dhugkar@gmail.com |
+| babu       | rao       | india   | banglore | karnartaka | 9282 | 9283838484   | baburao@gmail.com |
++------------+-----------+---------+----------+------------+------+--------------+-------------------+
+2 rows in set (0.00 sec)
 
 
