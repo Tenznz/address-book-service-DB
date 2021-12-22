@@ -125,3 +125,26 @@ mysql> select * from addressbook where city = 'banglore' order by first_name,las
 | tenzing    | dhugkar   | canada  | banglore | karnartaka | 1234 | 7018485591   | dhugkar@gmail.com |
 +------------+-----------+---------+----------+------------+------+--------------+-------------------+
 2 rows in set (0.00 sec)
+
+mysql> alter table addressbook add name varchar(25) after last_name,
+    -> add type varchar(20) after name;
+Query OK, 0 rows affected (0.17 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe addressbook;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| first_name   | varchar(20)  | NO   |     | NULL    |       |
+| last_name    | varchar(20)  | NO   |     | NULL    |       |
+| name         | varchar(25)  | YES  |     | NULL    |       |
+| type         | varchar(20)  | YES  |     | NULL    |       |
+| address      | varchar(100) | NO   |     | NULL    |       |
+| city         | varchar(25)  | NO   |     | NULL    |       |
+| state        | varchar(25)  | NO   |     | NULL    |       |
+| zip          | int          | NO   |     | NULL    |       |
+| phone_number | varchar(20)  | NO   | PRI | NULL    |       |
+| email        | varchar(100) | NO   |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+10 rows in set (0.06 sec)
+
