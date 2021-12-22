@@ -116,3 +116,12 @@ mysql> select city, state ,count(*) from addressbook group by city;
 | banglore  | karnartaka |        2 |
 +-----------+------------+----------+
 2 rows in set (0.00 sec)
+
+mysql> select * from addressbook where city = 'banglore' order by first_name,last_name asc;
++------------+-----------+---------+----------+------------+------+--------------+-------------------+
+| first_name | last_name | address | city     | state      | zip  | phone_number | email             |
++------------+-----------+---------+----------+------------+------+--------------+-------------------+
+| babu       | rao       | india   | banglore | karnartaka | 9282 | 9283838484   | baburao@gmail.com |
+| tenzing    | dhugkar   | canada  | banglore | karnartaka | 1234 | 7018485591   | dhugkar@gmail.com |
++------------+-----------+---------+----------+------------+------+--------------+-------------------+
+2 rows in set (0.00 sec)
