@@ -148,3 +148,34 @@ mysql> describe addressbook;
 +--------------+--------------+------+-----+---------+-------+
 10 rows in set (0.06 sec)
 
+mysql> insert into addressbook(first_name,last_name,address,city,state,zip,phone_number,email) values
+    -> ('tenzing','tsering','india','banglore','karnataka',123,'1234567890','tsering@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> update addressbook set type='friend'  where first_name='raju'||first_name='babu';
+Query OK, 2 rows affected, 1 warning (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 1
+
+mysql> update addressbook set type='family'  where first_name='tenzing';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from addressbook;
++------------+-----------+--------+---------+-----------+------------+------+--------------+-------------------+
+| first_name | last_name | type   | address | city      | state      | zip  | phone_number | email             |
++------------+-----------+--------+---------+-----------+------------+------+--------------+-------------------+
+| raju       | sham      | friend | india   | jalandhar | punjab     |  282 | 1213838484   | raju@gmail.com    |
+| tenzing    | tsering   | family | india   | banglore  | karnataka  |  123 | 1234567890   | tsering@gmail.com |
+| tenzing    | dhugkar   | family | canada  | banglore  | karnartaka | 1234 | 7018485591   | dhugkar@gmail.com |
+| babu       | rao       | friend | india   | banglore  | karnartaka | 9282 | 9283838484   | baburao@gmail.com |
++------------+-----------+--------+---------+-----------+------------+------+--------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> select type ,count(*) from addressbook group by type;
++--------+----------+
+| type   | count(*) |
++--------+----------+
+| friend |        2 |
+| family |        2 |
++--------+----------+
+2 rows in set (0.00 sec)
